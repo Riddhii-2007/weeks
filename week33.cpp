@@ -8,7 +8,7 @@ int main()
     student[102]="Mouthwika";
     student[103]="Carry";
     student[104]="Skylar";
-    for(auto it=student.begin();it != student.end;it++)
+    for(auto it=student.begin();it!=student.end;it++)
     {
         cout<<it->first<<" Name :"<<it->second<<endl;
     }

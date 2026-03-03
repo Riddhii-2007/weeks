@@ -1,47 +1,31 @@
-#include<iostream>
+#include<stdio.h>
 using namespace std;
-//Node structure(ADI representation)
 struct Node{
     int data;
     Node* next;
 }
-//Linked list ADT classs
-class SingleLinkedList{
-    SingleLinkedList{
-    head=NULL;
-    }
-    //insert at beginning
-    void insertBeginning(int value)
+class SingleLinkedlist
+{
+    private:
+    Node* head;
+
+    public:
+    //constructor
+    SingleLinkedlist()
     {
-        Node* newNode= new Node;
-        newNode->data=value;
-        newNode->next=Null;
+        head=NULL;
+    }
+
+    void deletBegnning()
+    {
         if(head==NULL)
         {
-            head=newNode;
-        }
-        newNode->next=head;
-        head=newNode;
-        cout<<"Inserted at Beginning Successfully\n";
-    }
-    //insert at end
-    void inserEnd(int value)
-    {
-        Node* newNode=new Node;
-        newNode->data=value;
-        newNode->next=NULL:
-        if(head==NULL)
-        {
-            head=newNode;
-            cout<<"List was empty.Node is inserted at start node\n";
+            cout<<"List is empty";
             return;
         }
-        Node* temp=head;
-        while(temp->next!= NULL)
-        {
-            temp=temp->next;
-        }
-        temp->next=newNode;
-        cout<<"Inserted at ENd sucessfully\n";
+        Node* temp==head;
+        head=head->next;
+        delete temp;
+        cout<<"Deleted from beginning successfully"; 
     }
 }
