@@ -30,6 +30,7 @@ class SingleLinkedlist
         {
             head=newNode;
             cout<<"List is empty,elemnt inserted at beginning";
+            return;
         }
         Node* temp=head;
         while(temp->next!=NULL)
@@ -37,6 +38,13 @@ class SingleLinkedlist
             temp=temp->next;
         }
         temp->next=newNode;
+    }
+    void insertAtPosition(int value, int pos)
+    {
+        Node* newNode=new Node;
+        newNode->data=value;
+        newNode->next=head;
+        
     }
 };
 int main()
