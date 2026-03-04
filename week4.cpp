@@ -28,4 +28,25 @@ class SingleLinkedlist
         delete temp;
         cout<<"Deleted from beginning successfully"; 
     }
+
+    void deletEnd()
+    {
+        if(head==NULL)
+        {
+            cout<<"List is empty";
+            return;
+        }
+        if(head->next=NULL)
+        {
+            delete head;
+            head=NULL:
+            cout<<"element is deleted at end,list is empty\n";
+            return;
+        }
+        Node* temp=head;
+        if(temp->next->next!=NULL)
+        {
+            temp=temp->next;
+        }
+    }
 }
