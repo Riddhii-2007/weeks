@@ -38,14 +38,83 @@ class SingleLinkedlist
             temp=temp->next;
         }
         temp->next=newNode;
+        cout<<"Element inserted at end successfully";
     }
     void insertAtPosition(int value, int pos)
-    {
-        Node* newNode=new Node;
-        newNode->data=value;
-        newNode->next=head;
-        
+    {   
+       if(pos==1)
+       {
+        insertBeginning(value);
+        return;
+       }
+       Node* newNode=new Node;
+       newNode->data=value;
+       Node* temp=head;
+       for(int i=1;i<pos-1 && temp!=NULL;i++)
+       {
+        temp=temp->next;
+       }
+       if(temp==NULL)
+       {
+        cout<<"Invalid position";
+        return;
+       }
+       newNode->next=temp->next;
+       temp->next=newNode;
+        cout<<"Elemet inserted at give position successfully";
+        return;
     }
+    void deleteBeginning()
+    {
+        if(head==NULL)
+        {
+            cout<<"List is empty";
+            return;
+        }
+        Node* temp=head;
+        head=head->next;
+        delete temp;
+        cout<<"Element deleted at beginning successfully";
+    }
+    void deleteEnd()
+    {
+        if(head==NULL)
+        {
+            cout<<"List is empty";
+            return;
+        }
+        Node* temp=head;
+        if(head->next==NULL)
+        {
+           head=head->next;
+           delete temp;
+            return;
+        }
+        
+        while(temp->next->next!=NULL)
+        {
+            temp=temp->next;
+        }
+        delete temp->next;
+        temp->next=NULL;
+        cout<<"Element at end deleted successfully";
+    }
+    void deleteAtPosition(int pos){
+        if(head==NULL){
+            cout<<"List is empty";
+            return;
+        }
+        Node* temp=head;
+        if(head->next==NULL){
+            head=head->next;
+            delete temp;
+        }
+        for(int i=1;i<pos+1;i++)
+        {
+            temp=temp
+        }
+    }
+
 };
 int main()
 {   
